@@ -44,7 +44,7 @@ public class Solution
 
     public static void main(String[] args)
     {
-        //  (Solution.class)
+
         {
             if (args.length == 0)
             {
@@ -81,7 +81,7 @@ public class Solution
                     info(r);
                 }
             }
-            ;
+
         }
     }
 
@@ -112,8 +112,8 @@ public class Solution
             }
             catch (ParseException e)
             {
-               // System.out.println("Ошибка в "+ i+" vsego"+ countpers);
-                e.printStackTrace();
+
+
 
             }
         }
@@ -135,7 +135,7 @@ public class Solution
             if (id < allPeople.size() && id >= 0 && id!=prevIndex)
             {
                 allPeople.remove(id);
-              //  System.out.println("removed "+ id);
+
             }
             prevIndex = id;
         }
@@ -170,7 +170,7 @@ public class Solution
             {
                 bd = formatter.parse(mass[i * 4 + 3]);
                 pers.setBirthDay(bd);
-               // System.out.println(allPeople.indexOf(pers)+" updated");
+
             }
             catch (Exception e)
             {

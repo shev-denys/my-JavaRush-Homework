@@ -1,7 +1,6 @@
 package com.javarush.test.level18.lesson03.task05;
 
 
-
 /* Сортировка байт
 Ввести с консоли имя файла
 Считать все байты из файла.
@@ -47,7 +46,6 @@ public class Solution {
         String s="";
         for(int i : result){
                 s+=i+" ";
-
         }
 
         s= s.substring(0,s.length()-1);
