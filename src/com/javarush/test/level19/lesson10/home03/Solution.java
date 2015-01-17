@@ -27,25 +27,26 @@ public class Solution
 
     public static void main(String[] args) throws IOException
     {
-        BufferedReader reader = new BufferedReader(new FileReader(args[0]));
-
+        Scanner reader = new Scanner(new File(args[0]));  //при дебаге необходимо добавлять "windows-1251" чтоб было видно символы
         Date date = null;
-        while (reader.ready())
+        while (reader.hasNext())
         {
-            String str = reader.readLine();
+            String str = reader.nextLine();
             String[] array = str.split(" ");
             String name = "";
-            // имя
-            for (int i = 0; i < array.length - 3; i++)
-                name = name + array[i] + " ";
 
-            SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy");
-            // дата рождения
+            for (int i = 0; i < array.length - 3; i++)
+            {
+             if (i!=array.length-4)
+                name = name + array[i] + " ";
+                else
+                 name = name + array[i];
+
+            }
+            SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy",Locale.ENGLISH);
+
             String data = (Integer.parseInt(array[array.length - 3]) + " " + Integer.parseInt(array[array.length - 2]) + " " + Integer.parseInt(array[array.length - 1]));
-            // перекодируем  в UTF-8
-            byte[] utf8Bytes = name.getBytes("UTF-8");
-            String nameInUTF = new String(utf8Bytes, "UTF-8");
-            // парсим дату
+
             try
             {
                 date = (sdf.parse(data));
@@ -54,7 +55,7 @@ public class Solution
             {
                 e.printStackTrace();
             }
-            PEOPLE.add(new Person(nameInUTF, date));
+            PEOPLE.add(new Person(name, date));
         }
         reader.close();
    }
