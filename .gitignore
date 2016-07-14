@@ -1,2 +1,12 @@
 JavaRushPlugin.properties
 *.txt
+/target/
+/bin/
+.project
+.settings/
+.classpath
+/out/
+/rep/
+DO NOT READ.txt
+.idea/
+JavaRushHomeWork.iml
